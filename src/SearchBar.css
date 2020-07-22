@@ -1,0 +1,134 @@
+/* SEARCH */
+
+input {
+  border-radius: 4px;
+  background-color: #e5e6ed;
+  border: 1px solid #e5e6ed;
+  border-style: none;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  margin-top: 0;
+  width: auto;
+  padding-left: 8px;
+  width: 140px;
+}
+
+::placeholder {
+  opacity: 80%;
+  color: rgb(80, 78, 78);
+  position: relative;
+  left: 4px;
+  font-size: 14px;
+}
+
+input:focus,
+input:active,
+input:active:focus:not(:disabled):not(.disabled) {
+  box-shadow: none !important;
+  outline: 0;
+}
+
+i {
+  color: #212529;
+  font-size: 16px;
+}
+
+.btn-search {
+  border-radius: 4px;
+  background-color: #e5e6ed;
+  border: 1px solid #e5e6ed;
+  margin-top: 0;
+  padding-bottom: 2px;
+  padding-top: 1px;
+  margin-left: 4px;
+  transition: all 200ms ease-in-out;
+}
+.btn-geo {
+  border-radius: 4px;
+  background-color: #7a9fc7;
+  border: 1px solid #7a9fc7;
+  margin-top: 0;
+  margin-left: 2px;
+  padding-bottom: 2px;
+  padding-top: 1px;
+  transition: all 200ms ease-in-out;
+  opacity: 90%;
+}
+
+div.col-2 {
+  padding-left: 0;
+}
+.row.search-city {
+  margin-bottom: 5px;
+}
+
+.btn-search:focus,
+.btn-search:active,
+.btn-search:active:focus:not(:disabled):not(.disabled),
+.btn:focus,
+.btn:active {
+  box-shadow: none !important;
+  outline: 0;
+}
+
+.btn-geo:focus,
+.btn-geo:active,
+.btn-geo:active:focus:not(:disabled):not(.disabled),
+.btn:focus,
+.btn:active {
+  box-shadow: none !important;
+  outline: 0;
+}
+
+/* TEMPERATURE SCALE */
+
+.temp-scale-btn {
+  position: relative;
+  left: 32px;
+  margin-right: 0;
+  height: 100%;
+  margin-top: 0;
+  padding: 1px;
+}
+
+button.active {
+  border-radius: 4px;
+  background-color: #e5e6ed;
+  border: 1px solid #e5e6ed;
+}
+
+.btn-celsius {
+  background-color: #7a9fc7;
+  border: 1px solid #7a9fc7;
+  transition: all 200ms ease-in-out;
+  margin-right: 4px;
+}
+
+.btn-fahrenheit {
+  margin-left: -3px;
+  background-color: #7a9fc7;
+  border: 1px solid #7a9fc7;
+  border-radius: 4px;
+  transition: all 200ms ease-in-out;
+}
+
+.btn-celsius:hover,
+.btn-celsius:focus,
+.btn-celsius:active,
+.btn-celsius:active:focus:not(:disabled):not(.disabled) {
+  box-shadow: none !important;
+  outline: 0;
+  border-radius: 4px;
+  background-color: #e5e6ed;
+  border: 1px solid #e5e6ed;
+}
+
+.btn-fahrenheit:hover,
+.btn-fahrenheit:focus,
+.btn-fahrenheit:active:focus:not(:disabled):not(.disabled) {
+  box-shadow: none !important;
+  outline: 0;
+  border: 1px solid #e5e6ed;
+  border-radius: 4px;
+  background-color: #e5e6ed;
+}
