@@ -1,17 +1,24 @@
 /* NEXT DAYS*/
-
-.weather-forecast {
-  margin-top: 35px;
+div.row.weather-forecast {
+  margin-top: 15px;
   margin-bottom: 0;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #352fac;
+  border-radius: 6px;
+  padding: 15px 5px;
+  background-color: #352fac;
+  color: white;
+  max-width: 370px;
+  height: 150px;
 }
 
 .weather-forecast h3 {
   font-size: 14px;
   height: 15px;
   line-height: 15px;
-  padding-top: 10px;
-  padding-bottom: 35px;
+  padding-bottom: 32px;
   margin-right: -18px;
   margin-left: -18px;
   margin-bottom: 0;
@@ -20,8 +27,8 @@
 .weather-forecast img {
   display: block;
   margin: 0 auto;
-  height: 36px;
-  width: 36px;
+  height: 40px;
+  width: 40px;
 }
 
 .col.next-day {
@@ -32,7 +39,7 @@
 
 .col.temp {
   text-align: center;
-  padding: 20px 0 0 0;
+  padding: 15px 0 0 0;
   font-size: 13px;
   line-height: 1.6em;
 }

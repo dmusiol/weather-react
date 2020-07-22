@@ -10,8 +10,8 @@ export default function SearchBar() {
             type="search"
             placeholder="Search city"
             id="search-engine"
-            autocomplete="off"
-            autofocus="on"
+            autoComplete="off"
+            autoFocus="on"
           />
           <button type="submit" className="btn-search">
             <i className="fas fa-search" />

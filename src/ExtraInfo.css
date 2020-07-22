@@ -1,0 +1,45 @@
+div h3 {
+  font-size: 13px;
+  margin: 5px auto;
+}
+
+div.extra-info {
+  color: #352fac;
+  font-weight: 600;
+  text-align: center;
+  margin: 30px auto 20px auto;
+  font-size: 12px;
+  padding-top: 5px;
+  max-width: 330px;
+}
+div.col-4.extra {
+  max-height: 70px;
+  max-width: 100px;
+  border-radius: 6px;
+  border: 1px solid #dcd8f8;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#todayWeather {
+  color: rgb(0, 0, 0);
+}
+
+i.fas.fa-tint {
+  color: #352fac;
+  width: 35px;
+}
+
+i.fas.fa-wind {
+  color: #352fac;
+  width: 35px;
+}
+
+i.fas.fa-umbrella {
+  color: #352fac;
+  width: 35px;
+}

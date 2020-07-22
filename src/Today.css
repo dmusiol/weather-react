@@ -1,0 +1,53 @@
+/*DATE & TIME*/
+
+.datetime {
+  font-size: 13px;
+  padding: 0 15px;
+  color: black;
+  font-weight: 500;
+  opacity: 80%;
+}
+
+div.date {
+  margin: 15px auto;
+}
+
+/*MAIN*/
+.today-data {
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  margin: 15px auto 50px auto;
+}
+
+div h1 {
+  padding: 0px 5px 5px 5px;
+  font-size: 25px;
+  color: black;
+  margin: 5px auto;
+}
+
+.city-name img {
+  margin: 0 auto;
+}
+
+.city-name p {
+  margin: 10px auto 0 auto;
+}
+div h2 {
+  font-size: 5.5em;
+  line-height: 1em;
+  text-align: left;
+  padding: 0px;
+  margin: 95px auto 50px auto;
+  color: rgb(0, 0, 0);
+}
+
+div.col-6.city-temp {
+  padding-left: 20px;
+}
+
+div.col-6.city-name {
+  padding-left: 20px;
+  padding-right: 0;
+}
