@@ -48,5 +48,5 @@ div.row.weather-forecast {
   font-weight: 600;
 }
 .low {
-  opacity: 80%;
+  opacity: 0.8;
 }

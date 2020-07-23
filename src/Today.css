@@ -1,11 +1,11 @@
 /*DATE & TIME*/
 
-.datetime {
+span.datetime {
   font-size: 13px;
   padding: 0 15px;
   color: black;
   font-weight: 500;
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 div.date {
@@ -48,6 +48,6 @@ div.col-6.city-temp {
 }
 
 div.col-6.city-name {
-  padding-left: 15px;
-  padding-right: 0;
+  padding-left: 10px;
+  padding-right: 10px;
 }
