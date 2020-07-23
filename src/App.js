@@ -22,7 +22,10 @@ function App() {
       </div>
       <div className="coded-by">
         <small>
-          <a href="https://github.com/dmusiol/weather-app"> Open-source code</a>{" "}
+          <a href="https://github.com/dmusiol/weather-react">
+            {" "}
+            Open-source code
+          </a>{" "}
           by Dominika Musiol 👩🏻‍💻
         </small>
       </div>

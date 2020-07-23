@@ -111,7 +111,6 @@ button.active {
 }
 
 .btn-fahrenheit {
-  margin-left: -3px;
   background-color: #f6f9fa;
   border: 1px solid #f6f9fa;
   border-radius: 4px;
