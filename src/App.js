@@ -14,6 +14,9 @@ function App() {
               Open-source code
             </a>{" "}
             by Dominika Musiol 👩🏻‍💻
+            <br />
+            Icons made by
+            <a href="https://tereszkiewicz.tumblr.com"> Hubert Tereszkiewicz</a>
           </small>
         </div>
       </div>
