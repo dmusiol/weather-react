@@ -1,7 +1,6 @@
 import React from "react";
 import "./Today.css";
 import FormattedDate from "./FormattedDate";
-import WeatherTemp from "./WeatherTemp";
 
 export default function TodayTemp(props) {
   return (
