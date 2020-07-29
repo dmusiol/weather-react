@@ -17,7 +17,7 @@ export default function TodayTemp(props) {
         <p id="todayWeather">{props.data.description}</p>
       </div>
       <div className="col-6 city-temp">
-        <h2>19°</h2>
+        <h2>{Math.round(props.data.temperature)}°</h2>
       </div>
     </div>
   );
