@@ -1,7 +1,7 @@
 import React from "react";
 import "./ExtraInfo.css";
 
-export default function ExtraInfo() {
+export default function ExtraInfo(props) {
   return (
     <div className="row extra-info">
       <div className="col-4 extra">
