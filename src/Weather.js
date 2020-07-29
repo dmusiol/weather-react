@@ -65,7 +65,7 @@ export default function Weather(props) {
             <WeatherTemp />
           </div>
         </div>
-        <Today data={weatherInfo} />
+        <Today data={weatherInfo} icon={weatherInfo.icon} />
         <ExtraInfo info={weatherInfo} />
         <div className="row weather-forecast" id="forecast">
           <Forecast weekDay="MON" tempMax="21" tempMin="16" />

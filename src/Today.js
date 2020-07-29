@@ -8,7 +8,12 @@ export default function TodayTemp(props) {
       <div className="col-6 city-name">
         <FormattedDate date={props.data.date} />
         <h1>{props.data.city}</h1>
-        <img src="/02d.svg" width="100px" id="main-icon" alt="" />
+        <img
+          src={"color/" + props.icon + ".svg"}
+          width="100px"
+          id="main-icon"
+          alt=""
+        />
         <p id="todayWeather">{props.data.description}</p>
       </div>
       <div className="col-6 city-temp">
