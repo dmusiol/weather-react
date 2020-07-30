@@ -3,7 +3,6 @@ import "./Weather.css";
 import Forecast from "./Forecast";
 import Today from "./Today";
 import ExtraInfo from "./ExtraInfo";
-import WeatherTemp from "./WeatherTemp";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -39,6 +38,18 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
+  function displayLocation(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    const apiKey = "34c58b2c4ee93547facc769d027d3250";
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiURL).then(displayWeather);
+  }
+
+  function getCurrentPosition(event) {
+    navigator.geolocation.getCurrentPosition(displayLocation);
+  }
+
   if (weatherInfo.ready) {
     return (
       <div className="WeatherApp">
@@ -56,13 +67,20 @@ export default function Weather(props) {
               <button type="submit" className="btn-search">
                 <i className="fas fa-search" />
               </button>
-              <button className="btn-geo" id="geo">
+              <button className="btn-geo" id="geo" onClick={getCurrentPosition}>
                 <i className="fas fa-map-marker-alt" />
               </button>
             </form>
           </div>
           <div className="col-4 cel-fah">
-            <WeatherTemp />
+            <div className="temp-scale-btn">
+              <button className="btn-celsius active" id="cels">
+                ℃
+              </button>
+              <button className="btn-fahrenheit" id="fahr">
+                ℉
+              </button>
+            </div>
           </div>
         </div>
         <Today data={weatherInfo} icon={weatherInfo.icon} />
