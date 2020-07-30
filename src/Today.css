@@ -17,14 +17,14 @@ div.date {
   text-align: center;
   font-weight: 600;
   font-size: 1em;
-  margin: 15px auto 50px auto;
+  margin: 15px auto 40px auto;
 }
 
 div h1 {
   padding: 0px 5px 5px 5px;
   font-size: 1.6em;
   color: black;
-  margin: 5px auto;
+  margin: 5px auto 5px auto;
   height: 1.6em;
 }
 
@@ -36,11 +36,11 @@ div h1 {
   margin: 10px auto 0 auto;
 }
 div h2 {
-  font-size: 5.5em;
-  line-height: 1em;
+  font-size: 5em;
+  line-height: 1.2em;
   text-align: left;
   padding: 0px;
-  margin: 95px auto 50px auto;
+  margin: 100px auto 50px auto;
   color: rgb(0, 0, 0);
 }
 

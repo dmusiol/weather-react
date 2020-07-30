@@ -8,6 +8,35 @@ import axios from "axios";
 export default function Weather(props) {
   const [weatherInfo, setweatherInfo] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const [unit, setUnit] = useState("celsius");
+  const [celsSelected, setCelsSelected] = useState({});
+  const [fahrsSelected, setFahrsSelected] = useState({});
+
+  function showCelsius(event) {
+    event.preventDefault();
+    setUnit("celsius");
+    setCelsSelected({
+      backgroundColor: `#d7d4ec`,
+      color: `#352fac`,
+      fontWeight: `500`,
+    });
+    setFahrsSelected({});
+  }
+
+  function showFahrenheit(event) {
+    event.preventDefault();
+    setUnit("fahrenheit");
+    setFahrsSelected({
+      backgroundColor: `#d7d4ec`,
+      color: `#352fac`,
+      fontWeight: `500`,
+    });
+    setCelsSelected({
+      backgroundColor: `#f6f9fa`,
+      color: `#352fac`,
+      borderColor: `#f6f9fa`,
+    });
+  }
 
   function displayWeather(response) {
     setweatherInfo({
@@ -46,7 +75,7 @@ export default function Weather(props) {
     axios.get(apiURL).then(displayWeather);
   }
 
-  function getCurrentPosition(event) {
+  function getCurrentPosition() {
     navigator.geolocation.getCurrentPosition(displayLocation);
   }
 
@@ -74,16 +103,26 @@ export default function Weather(props) {
           </div>
           <div className="col-4 cel-fah">
             <div className="temp-scale-btn">
-              <button className="btn-celsius active" id="cels">
+              <button
+                className="btn-celsius active"
+                id="cels"
+                onClick={showCelsius}
+                style={celsSelected}
+              >
                 ℃
               </button>
-              <button className="btn-fahrenheit" id="fahr">
+              <button
+                className="btn-fahrenheit"
+                id="fahr"
+                onClick={showFahrenheit}
+                style={fahrsSelected}
+              >
                 ℉
               </button>
             </div>
           </div>
         </div>
-        <Today data={weatherInfo} icon={weatherInfo.icon} />
+        <Today data={weatherInfo} icon={weatherInfo.icon} unit={unit} />
         <ExtraInfo info={weatherInfo} />
         <div className="row weather-forecast" id="forecast">
           <Forecast weekDay="MON" tempMax="21" tempMin="16" />
