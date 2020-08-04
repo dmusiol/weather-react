@@ -53,7 +53,7 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = "34c58b2c4ee93547facc769d027d3250";
+    const apiKey = "622e3d04167a672cc03b37b7f405452f";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
   }
@@ -70,7 +70,7 @@ export default function Weather(props) {
   function displayLocation(position) {
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
-    const apiKey = "34c58b2c4ee93547facc769d027d3250";
+    const apiKey = "622e3d04167a672cc03b37b7f405452f";
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     axios.get(apiURL).then(displayWeather);
   }
@@ -124,13 +124,7 @@ export default function Weather(props) {
         </div>
         <Today data={weatherInfo} icon={weatherInfo.icon} unit={unit} />
         <ExtraInfo info={weatherInfo} />
-        <div className="row weather-forecast" id="forecast">
-          <Forecast weekDay="MON" tempMax="21" tempMin="16" />
-          <Forecast weekDay="TUE" tempMax="20" tempMin="16" />
-          <Forecast weekDay="WED" tempMax="22" tempMin="18" />
-          <Forecast weekDay="THU" tempMax="23" tempMin="18" />
-          <Forecast weekDay="FRI" tempMax="24" tempMin="19" />
-        </div>
+        <Forecast city={weatherInfo.city} unit={unit} />
       </div>
     );
   } else {

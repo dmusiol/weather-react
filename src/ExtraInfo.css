@@ -29,17 +29,25 @@ div.col-4.extra {
   color: rgb(0, 0, 0);
 }
 
+.col-4.extra p {
+  margin-bottom: 0;
+  height: 16px;
+}
+
 i.fas.fa-tint {
   color: #352fac;
   width: 35px;
+  height: 15px;
 }
 
 i.fas.fa-wind {
   color: #352fac;
   width: 35px;
+  height: 15px;
 }
 
 i.fas.fa-cloud {
   color: #352fac;
   width: 35px;
+  height: 15px;
 }

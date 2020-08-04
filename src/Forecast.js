@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Forecast.css";
+import axios from "axios";
+import ForecastPreview from "./ForecastPreview";
 
 export default function Forecast(props) {
-  return (
-    <div className="col next-day">
-      <h3>{props.weekDay}</h3>
-      <img src="01d.svg" alt="" />
-      <div className="col temp">
-        <span className="high">{props.tempMax}</span> |{" "}
-        <span className="low">{props.tempMin}</span>
+  const [loaded, setLoaded] = useState(false);
+  const [forecast, setForecast] = useState(null);
+
+  function displayForecast(response) {
+    console.log(response.data);
+    setForecast(response.data);
+
+    setLoaded(true);
+  }
+
+  if (loaded && props.city === forecast.city.name) {
+    return (
+      <div className="row weather-forecast" id="forecast">
+        <ForecastPreview data={forecast.list[9]} unit={props.unit} />
+        <ForecastPreview data={forecast.list[17]} unit={props.unit} />
+        <ForecastPreview data={forecast.list[25]} unit={props.unit} />
+        <ForecastPreview data={forecast.list[33]} unit={props.unit} />
+        <ForecastPreview data={forecast.list[39]} unit={props.unit} />
       </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "622e3d04167a672cc03b37b7f405452f";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(displayForecast);
+
+    return null;
+  }
 }

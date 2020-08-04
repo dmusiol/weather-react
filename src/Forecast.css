@@ -40,13 +40,10 @@ div.row.weather-forecast {
 .col.temp {
   text-align: center;
   padding: 15px 0 0 0;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.6em;
 }
 
 .high {
-  font-weight: 600;
-}
-.low {
-  opacity: 0.8;
+  font-weight: 500;
 }
