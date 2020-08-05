@@ -8,7 +8,6 @@ export default function Forecast(props) {
   const [forecast, setForecast] = useState(null);
 
   function displayForecast(response) {
-    console.log(response.data);
     setForecast(response.data);
 
     setLoaded(true);
@@ -17,10 +16,10 @@ export default function Forecast(props) {
   if (loaded && props.city === forecast.city.name) {
     return (
       <div className="row weather-forecast" id="forecast">
-        <ForecastPreview data={forecast.list[9]} unit={props.unit} />
-        <ForecastPreview data={forecast.list[17]} unit={props.unit} />
-        <ForecastPreview data={forecast.list[25]} unit={props.unit} />
-        <ForecastPreview data={forecast.list[33]} unit={props.unit} />
+        <ForecastPreview data={forecast.list[7]} unit={props.unit} />
+        <ForecastPreview data={forecast.list[15]} unit={props.unit} />
+        <ForecastPreview data={forecast.list[23]} unit={props.unit} />
+        <ForecastPreview data={forecast.list[31]} unit={props.unit} />
         <ForecastPreview data={forecast.list[39]} unit={props.unit} />
       </div>
     );
