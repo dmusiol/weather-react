@@ -1,17 +1,17 @@
 import React from "react";
 import "./Today.css";
-import FormattedDate from "./FormattedDate";
 
 export default function TodayTemp(props) {
   if (props.unit === "celsius") {
     return (
       <div className="row today-data">
-        <div className="col-6 city-name">
-          <FormattedDate date={props.data.date} />
+        <div className="header" style={{ width: "100%" }}>
           <h1>{props.data.city}</h1>
+        </div>
+        <div className="col-6 city-name">
           <img
             src={"color/" + props.icon + ".svg"}
-            width="100px"
+            width="90px"
             id="main-icon"
             alt=""
           />
@@ -25,12 +25,13 @@ export default function TodayTemp(props) {
   } else {
     return (
       <div className="row today-data">
-        <div className="col-6 city-name">
-          <FormattedDate date={props.data.date} />
+        <div className="header" style={{ width: "100%" }}>
           <h1>{props.data.city}</h1>
+        </div>
+        <div className="col-6 city-name">
           <img
             src={"color/" + props.icon + ".svg"}
-            width="100px"
+            width="90px"
             id="main-icon"
             alt=""
           />

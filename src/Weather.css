@@ -95,13 +95,16 @@ i {
 
 /* TEMPERATURE SCALE */
 
-.temp-scale-btn {
+div.col-4.cel-fah {
+  padding: 0;
+}
+div.temp-scale-btn {
   position: relative;
-  left: 40px;
   margin-right: 0;
   height: 100%;
   margin-top: 0;
   padding: 1px;
+  max-width: 70px;
 }
 
 button.active {
@@ -118,6 +121,8 @@ button.active {
   transition: all 200ms ease-in-out;
   color: #352fac;
   text-align: right;
+  position: relative;
+  left: 54px;
 }
 
 .btn-fahrenheit {
@@ -127,6 +132,8 @@ button.active {
   transition: all 200ms ease-in-out;
   color: #352fac;
   text-align: left;
+  position: relative;
+  left: 54px;
 }
 
 .btn-celsius:hover,
@@ -152,4 +159,17 @@ button.active {
   border-radius: 4px;
   color: #352fac;
   font-weight: 500;
+}
+
+/*DATE & TIME*/
+
+span.datetime {
+  font-size: 0.7em;
+  padding: 0 25px;
+  color: #362fab;
+  font-weight: 500;
+}
+
+div.date {
+  margin: 2px auto 20px auto;
 }

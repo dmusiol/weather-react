@@ -19,14 +19,14 @@ div.row.weather-forecast {
   height: 15px;
   line-height: 15px;
   padding-bottom: 32px;
-  margin-right: -18px;
-  margin-left: -18px;
+  margin-right: 0;
+  margin-left: 0;
   margin-bottom: 0;
 }
 
 .weather-forecast img {
   display: block;
-  margin: 0 auto;
+  margin: 5px auto;
   height: 40px;
   width: 40px;
 }
@@ -39,7 +39,7 @@ div.row.weather-forecast {
 
 .col.temp {
   text-align: center;
-  padding: 15px 0 0 0;
+  padding: 10px 0 0 0;
   font-size: 14px;
   line-height: 1.6em;
 }

@@ -4,6 +4,7 @@ import Forecast from "./Forecast";
 import Today from "./Today";
 import ExtraInfo from "./ExtraInfo";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
   const [weatherInfo, setweatherInfo] = useState({ ready: false });
@@ -46,7 +47,7 @@ export default function Weather(props) {
       clouds: response.data.clouds.all,
       wind: response.data.wind.speed,
       date: new Date(response.data.dt * 1000),
-      description: response.data.weather[0].main,
+      description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
       city: response.data.name,
     });
@@ -122,6 +123,7 @@ export default function Weather(props) {
             </div>
           </div>
         </div>
+        <FormattedDate date={weatherInfo.date} />
         <Today data={weatherInfo} icon={weatherInfo.icon} unit={unit} />
         <ExtraInfo info={weatherInfo} />
         <Forecast city={weatherInfo.city} unit={unit} />
