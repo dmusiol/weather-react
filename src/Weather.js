@@ -10,33 +10,15 @@ export default function Weather(props) {
   const [weatherInfo, setweatherInfo] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   const [unit, setUnit] = useState("celsius");
-  const [celsSelected, setCelsSelected] = useState({});
-  const [fahrsSelected, setFahrsSelected] = useState({});
 
   function showCelsius(event) {
     event.preventDefault();
     setUnit("celsius");
-    setCelsSelected({
-      backgroundColor: `#d7d4ec`,
-      color: `#352fac`,
-      fontWeight: `500`,
-    });
-    setFahrsSelected({});
   }
 
   function showFahrenheit(event) {
     event.preventDefault();
     setUnit("fahrenheit");
-    setFahrsSelected({
-      backgroundColor: `#d7d4ec`,
-      color: `#352fac`,
-      fontWeight: `500`,
-    });
-    setCelsSelected({
-      backgroundColor: `#f6f9fa`,
-      color: `#352fac`,
-      borderColor: `#f6f9fa`,
-    });
   }
 
   function displayWeather(response) {
@@ -54,7 +36,7 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = "622e3d04167a672cc03b37b7f405452f";
+    const apiKey = "34c58b2c4ee93547facc769d027d3250";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
   }
@@ -71,7 +53,7 @@ export default function Weather(props) {
   function displayLocation(position) {
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
-    const apiKey = "622e3d04167a672cc03b37b7f405452f";
+    const apiKey = "34c58b2c4ee93547facc769d027d3250";
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     axios.get(apiURL).then(displayWeather);
   }
@@ -105,10 +87,9 @@ export default function Weather(props) {
           <div className="col-4 cel-fah">
             <div className="temp-scale-btn">
               <button
-                className="btn-celsius active"
+                className={`btn-celsius ${unit === "celsius" ? "active" : ""}`}
                 id="cels"
                 onClick={showCelsius}
-                style={celsSelected}
               >
                 ℃
               </button>
@@ -116,7 +97,6 @@ export default function Weather(props) {
                 className="btn-fahrenheit"
                 id="fahr"
                 onClick={showFahrenheit}
-                style={fahrsSelected}
               >
                 ℉
               </button>

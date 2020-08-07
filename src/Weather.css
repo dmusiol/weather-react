@@ -167,9 +167,10 @@ button.active {
 
 span.datetime {
   font-size: 0.7em;
-  padding: 0 25px;
+  padding: 0 13px;
   color: #362fab;
   font-weight: 500;
+  opacity: 90%;
 }
 
 div.date {
