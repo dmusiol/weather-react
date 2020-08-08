@@ -20,25 +20,17 @@ export default function ForecastPreview(props) {
 
     return `${tempF}`;
   }
-  if (props.unit === "celsius") {
-    return (
-      <div className="col next-day">
-        <h3>{day()}</h3>
-        <img src={"monokolor/" + props.data.weather[0].icon + ".svg"} alt="" />
-        <div className="col temp">
-          <span className="high">{showTempC()}</span>°{" "}
-        </div>
+
+  return (
+    <div className="col next-day">
+      <h3>{day()}</h3>
+      <img src={"monokolor/" + props.data.weather[0].icon + ".svg"} alt="" />
+      <div className="col temp">
+        <span className="high">
+          {props.unit === "celsius" ? showTempC() : showTempF()}
+        </span>
+        °{" "}
       </div>
-    );
-  } else {
-    return (
-      <div className="col next-day">
-        <h3>{day()}</h3>
-        <img src={"monokolor/" + props.data.weather[0].icon + ".svg"} alt="" />
-        <div className="col temp">
-          <span className="high">{showTempF()}</span>°{" "}
-        </div>
-      </div>
-    );
-  }
+    </div>
+  );
 }

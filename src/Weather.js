@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Weather.css";
 import Forecast from "./Forecast";
 import Today from "./Today";
@@ -7,7 +7,7 @@ import axios from "axios";
 import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
-  const [weatherInfo, setweatherInfo] = useState({ ready: false });
+  const [weatherInfo, setWeatherInfo] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   const [unit, setUnit] = useState("celsius");
 
@@ -22,7 +22,7 @@ export default function Weather(props) {
   }
 
   function displayWeather(response) {
-    setweatherInfo({
+    setWeatherInfo({
       ready: true,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
@@ -62,6 +62,26 @@ export default function Weather(props) {
     navigator.geolocation.getCurrentPosition(displayLocation);
   }
 
+  useEffect(search, []);
+  if (!weatherInfo.ready) {
+    // search();
+    return (
+      <div
+        style={{
+          textAlign: "center",
+          fontSize: "1.2em",
+          marginTop: 50,
+          marginBottom: 50,
+          opacity: 0.8,
+          width: "100%",
+          color: "#352fac",
+        }}
+      >
+        Loading... Please wait
+      </div>
+    );
+  }
+
   if (weatherInfo.ready) {
     return (
       <div className="WeatherApp">
@@ -94,7 +114,9 @@ export default function Weather(props) {
                 ℃
               </button>
               <button
-                className="btn-fahrenheit"
+                className={`btn-fahrenheit ${
+                  unit !== "celsius" ? "active" : ""
+                }`}
                 id="fahr"
                 onClick={showFahrenheit}
               >
